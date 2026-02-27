@@ -1,16 +1,16 @@
 # SEGi Campus Assistance API
 
-这是一个基于Spring Boot的失物招领系统REST API，专为FlutterFlow前端设计。
+This is a lost and found system REST API based on Spring Boot, designed specifically for the FlutterFlow frontend.
 
-## 功能特性
+## Functions Features
 
-- **通知管理**: 创建、读取、更新、删除通知
-- **物品管理**: 创建、读取、更新、删除失物招领物品
-- **搜索功能**: 支持关键词搜索物品
-- **CORS支持**: 配置为支持FlutterFlow前端
-- **MySQL数据库**: 使用JPA进行数据持久化
+- **Notification Management:** Create, read, update, and delete notifications
+- **Item Management:** Create, read, update, and delete lost and found items
+- **Search Functionality:** Supports keyword search for items
+- **CORS Support:** Configured to support the FlutterFlow frontend
+- **MySQL Database:** Uses JPA for data persistence
 
-## 技术栈
+## technology stack
 
 - Java 17
 - Spring Boot 3.2.0
@@ -19,9 +19,9 @@
 - MySQL 8.0
 - Maven
 
-## 数据库配置
+## Database config
 
-在 `src/main/resources/application.properties` 中配置MySQL连接：
+at `src/main/resources/application.properties` Configure MySQL connection：
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/campus_assistance?useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true
@@ -29,64 +29,67 @@ spring.datasource.username=your_username
 spring.datasource.password=your_password
 ```
 
-## API端点
+## APIendpoint
 
-### 通知 (Notifications)
+### (Notifications)
 
-- `GET /api/notifications` - 获取所有通知
-- `GET /api/notifications/{id}` - 根据ID获取通知
-- `POST /api/notifications` - 创建新通知
-- `PUT /api/notifications/{id}` - 更新通知
-- `DELETE /api/notifications/{id}` - 删除通知
-- `GET /api/notifications/recent` - 获取最近24小时的通知
-- `GET /api/notifications/search?q=keyword` - 搜索通知
+- `GET /api/notifications` - Get all notifications
+- `GET /api/notifications/{id}` - Get notification based on ID
+- `POST /api/notifications` - Create new notification
+- `PUT /api/notifications/{id}` - Update notification
+- `DELETE /api/notifications/{id}` - Delete notification
+- `GET /api/notifications/recent` - Get notifications from the last 24 hours
+- `GET /api/notifications/search?q=keyword` - Search notifications
 
 ### 物品 (Items)
 
-- `GET /api/items` - 获取所有物品
-- `GET /api/items/{id}` - 根据ID获取物品
-- `GET /api/items/search?q=keyword` - 搜索物品
-- `GET /api/items/type/{type}` - 根据类型获取物品
-- `POST /api/items` - 创建新物品
-- `PUT /api/items/{id}` - 更新物品
-- `DELETE /api/items/{id}` - 删除物品
-- `GET /api/items/search/type?q=keyword&type=type` - 根据关键词和类型搜索物品
+`GET /api/items` - Retrieves all items
+`GET /api/items/{id}` - Retrieves items by ID
+`GET /api/items/search?q=keyword` - Searches for items
+`GET /api/items/type/{type}` - Retrieves items by type
+`POST /api/items` - Creates a new item
+`PUT /api/items/{id}` - Updates an item
+`DELETE /api/items/{id}` - Deletes an item
+`GET /api/items/search/type?q=keyword&type=type` - Searches for items by keyword and type
 
-## 数据模型
+## Data Model
 
-### Notification (通知)
-- `id` (Long) - 主键
-- `message` (String) - 通知消息
-- `time` (LocalDateTime) - 通知时间
+### Notification
 
-### Item (物品)
-- `id` (Long) - 主键
-- `title` (String) - 物品标题
-- `description` (String) - 物品描述
-- `type` (String) - 物品类型
+- `id` (Long) - Primary Key
+- `message` (String) - Notification Message
+- `time` (LocalDateTime) - Notification Time
 
-## 运行项目
+### Item
 
-1. 确保已安装Java 17和Maven
-2. 配置MySQL数据库
-3. 运行以下命令：
+- `id` (Long) - Primary Key
+- `title` (String) - Item Title
+- `description` (String) - Item Description
+- `type` (String) - Item Type
+
+## Running the Project
+
+1. Ensure Java 17 and Maven are installed.
+2. Configure the MySQL database.
+3. Run the following command:
 
 ```bash
 mvn spring-boot:run
 ```
 
-API将在 `http://localhost:8081` 上运行。
+The API will run at `http://localhost:8081`.
 
-## CORS配置
+## CORS Configuration
 
-API已配置CORS以支持以下来源：
-- `http://localhost:3000` (本地开发)
+The API is configured with CORS to support the following sources:
+
+- `http://localhost:3000` (local development)
 - `https://app.flutterflow.io` (FlutterFlow)
 
-可以通过环境变量 `CORS_ORIGINS` 自定义允许的来源。
+Allowed sources can be customized via the environment variable `CORS_ORIGINS`.
 
-## 环境变量
+## Environment Variables
 
-- `DB_USERNAME` - 数据库用户名 (默认: root)
-- `DB_PASSWORD` - 数据库密码 (默认: password)
-- `CORS_ORIGINS` - 允许的CORS来源 (默认: http://localhost:3000,https://app.flutterflow.io)
+- `DB_USERNAME` - Database username (default: root)
+- `DB_PASSWORD` - Database password (default: password)
+- `CORS_ORIGINS` - Allowed CORS sources (default: http://localhost:3000, https://app.flutterflow.io)
