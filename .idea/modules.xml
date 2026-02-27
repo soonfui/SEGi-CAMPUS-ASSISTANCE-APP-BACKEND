@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ItemDetailsPage/ItemDetailsPage.iml" filepath="$PROJECT_DIR$/ItemDetailsPage/ItemDetailsPage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LostAndFoundPage/LostAndFoundPage.iml" filepath="$PROJECT_DIR$/LostAndFoundPage/LostAndFoundPage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MarketplacePage/MarketplacePage.iml" filepath="$PROJECT_DIR$/MarketplacePage/MarketplacePage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReportLostItemPage/ReportLostItemPage.iml" filepath="$PROJECT_DIR$/ReportLostItemPage/ReportLostItemPage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SEGi Campus Assistance App.iml" filepath="$PROJECT_DIR$/SEGi Campus Assistance App.iml" />
+    </modules>
+  </component>
+</project>
